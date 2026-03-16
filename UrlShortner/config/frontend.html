@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <input type="text" id="originalURL" placeholder="Enter URL to shorten">
+        <button onclick="shortenURL()">Shorten</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        async function shortenURL() {
+            const originalURL = document.getElementById('originalURL').value;
+            if (!originalURL) {
+                alert('Please enter a URL');
+                return;
+            }
+            try {
+                const response = await fetch(`http://localhost:5077/api/shorten`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: originalURL })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById('result').innerHTML = `<a href="${data.shortURL}" target="_blank">${data.shortURL}</a>`;
+                } else {
+                    document.getElementById('result').textContent = data.error || 'Error shortening URL';
+                }
+            } catch (error) {
+                document.getElementById('result').textContent = 'Error connecting to server';
+                console.log('Error:', error);
+            }
+        }
+    </script>   
+
+</html>

@@ -1,2 +1,5 @@
 /.vscode
-/New folder
+/UrlShortner/node_modules
+/UrlShortner/.env
+/Event_Registeration/node_modules
+/Event_Registeration/.env

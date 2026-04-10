@@ -1,0 +1,26 @@
+[
+  {
+    "text": "❌ Invalid cURL",
+    "role": "bot",
+    "meta": {}
+  },
+  {
+    "text": "curl -X POST http://localhost:4110/api/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n  }'",
+    "role": "user",
+    "meta": {
+      "curl": "curl -X POST http://localhost:4110/api/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n  }'",
+      "yamlPath": "d:\\Users\\umer\\PROJECTS\\CodeAlphaproj\\.autoapi\\yamlhistory\\1775819450069-POST.yaml",
+      "baseUrl": "http://localhost:4110"
+    }
+  },
+  {
+    "text": "⏳ Generating YAML...",
+    "role": "bot",
+    "meta": {}
+  },
+  {
+    "text": "🧪 Running tests...",
+    "role": "bot",
+    "meta": {}
+  }
+]

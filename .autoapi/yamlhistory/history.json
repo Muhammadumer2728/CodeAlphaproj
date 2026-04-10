@@ -1,0 +1,10 @@
+[
+  {
+    "file": "1775819450069-POST.yaml",
+    "path": ".autoapi\\yamlhistory\\1775819450069-POST.yaml",
+    "timestamp": 1775819450069,
+    "endpoint": "/api/login",
+    "method": "POST",
+    "curlCommand": "curl -X POST http://localhost:4110/api/login    -H \"Content-Type: application/json\"    -d '{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n  }'"
+  }
+]

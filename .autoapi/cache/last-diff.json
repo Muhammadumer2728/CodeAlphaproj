@@ -1,0 +1,23 @@
+{
+  "new": [
+    {
+      "method": "POST",
+      "path": "/api/login",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "query": {},
+      "params": {},
+      "responses": {
+        "200": "Successful login",
+        "400": "Invalid input"
+      },
+      "summary": "User login",
+      "description": "",
+      "isNew": true
+    }
+  ],
+  "modified": [],
+  "unchanged": [],
+  "deleted": []
+}

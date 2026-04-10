@@ -1,8 +1,10 @@
+dotenv = require('dotenv');
+dotenv.config();
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
+    await mongoose.connect(process.env.mongodb, {
       serverSelectionTimeoutMS: 10000,
       socketTimeoutMS: 60000,
       connectTimeoutMS: 10000,
